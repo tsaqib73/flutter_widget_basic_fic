@@ -35,7 +35,10 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Belajar Flutter FUGI'),
         backgroundColor: Colors.red,
         elevation: 10,
-        leading: const Icon(Icons.settings),
+        leading: InkWell(
+          onTap: () {},
+          child: const Icon(Icons.settings),
+        ),
         actions: [
           InkWell(
             onTap: () {},
@@ -44,7 +47,10 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             width: 8,
           ),
-          const Icon(Icons.person),
+          InkWell(
+            onTap: () {},
+            child: const Icon(Icons.person),
+          ),
           const SizedBox(
             width: 16,
           )
@@ -59,14 +65,14 @@ class _HomePageState extends State<HomePage> {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 8,
+                  mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
                   childAspectRatio: 0.96,
                 ),
                 itemBuilder: (context, index) {
                   return box();
                 },
-                itemCount: 15,
+                itemCount: 10,
               ),
             ),
           ),
@@ -74,7 +80,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             flex: 1,
             child: ListView.builder(
-              itemCount: 20,
+              itemCount: 10,
               itemBuilder: (context, index) {
                 return Card(
                   child: ListTile(
@@ -93,6 +99,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     trailing: Icon(Icons.remove_circle),
+                    
                   ),
                 );
               },
@@ -200,7 +207,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget box() {
     return Container(
-      color: Colors.green,
+      decoration: BoxDecoration(
+          color: Color.fromARGB(255, 235, 149, 21),
+          borderRadius: BorderRadius.circular(13)),
     );
   }
 }
